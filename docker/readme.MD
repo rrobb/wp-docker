@@ -1,4 +1,4 @@
-# Endouble WP Docker WIP
+# WP Docker WIP
 ## Installation
 - When installing for the first time, use `docker-compose build` to build the containers.
 - Then use `docker-compose up` to start using them.
