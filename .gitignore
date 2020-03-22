@@ -1,4 +1,4 @@
-!.gitkeep
-!.gitignore
 docker/cert/*
 docker/mysql/data/*
+!.gitignore
+!.gitkeep
