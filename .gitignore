@@ -1,4 +1,6 @@
+app/wp
 docker/cert/*
 docker/mysql/data/*
 !.gitignore
 !.gitkeep
+app-init.php
