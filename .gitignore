@@ -1,3 +1,5 @@
 docker/cert/*
 docker/mysql/data/*
 docker/php/
+!.gitkeep
+!.gitignore

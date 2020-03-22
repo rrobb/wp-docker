@@ -16,6 +16,8 @@ RUN requirements="nano cron git mariadb-client libcurl3-dev libxml2-dev libfreet
     && requirementsToRemove="libcurl3-dev libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev" \
     && apt-get purge --auto-remove -y $requirementsToRemove
 
+RUN pecl install xdebug-2.9.3 && docker-php-ext-enable xdebug
+
 COPY ./docker/cert/ssl.crt /etc/apache2/ssl/ssl.crt
 COPY ./docker/cert/ssl.key /etc/apache2/ssl/ssl.key
 COPY ./docker/php/composer/id_rsa /root/.ssh/id_rsa
