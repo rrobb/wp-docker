@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MUPlugins\RegisterCustomTypes;
 
 use WP_Post_Type;
@@ -112,8 +114,7 @@ class SetupRelations
         string $title,
         callable $callback,
         string $page
-    ): void
-    {
+    ): void {
         add_settings_section(
             $id,
             $title,
@@ -127,7 +128,6 @@ class SetupRelations
             $this->pageSections[$page] = [];
         }
         $this->pageSections[$page][] = $id;
-
     }
 
     /**
@@ -155,7 +155,6 @@ class SetupRelations
                 'field' => $field,
             ]
         );
-
     }
 
     /**
@@ -253,7 +252,6 @@ HTML;
             </form>
         </div>
 HTML;
-
     }
 
     /**

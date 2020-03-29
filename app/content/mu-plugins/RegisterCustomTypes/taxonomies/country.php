@@ -1,7 +1,13 @@
 <?php
 
-if (!taxonomy_exists('country')) {
-    add_action('init', function () {
+declare(strict_types=1);
+
+if (taxonomy_exists('country')) {
+    return;
+}
+add_action(
+    'init',
+    function () {
         $type = 'country';
         $labelSingular = 'Country';
         $labelPlural = 'Countries';
@@ -22,8 +28,8 @@ if (!taxonomy_exists('country')) {
                     'singular_name' => $type,
                     'all_items' => $labelPlural,
                     'add_new_item' => 'New ' . $labelSingular,
-                ]
+                ],
             ]
         );
-    });
-}
+    }
+);

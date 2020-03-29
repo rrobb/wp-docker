@@ -1,7 +1,13 @@
 <?php
 
-if (!taxonomy_exists('department')) {
-    add_action('init', function () {
+declare(strict_types=1);
+
+if (taxonomy_exists('department')) {
+    return;
+}
+add_action(
+    'init',
+    function () {
         $type = 'department';
         $labelSingular = 'Department';
         $labelPlural = 'Departments';
@@ -22,8 +28,8 @@ if (!taxonomy_exists('department')) {
                     'singular_name' => $type,
                     'all_items' => $labelPlural,
                     'add_new_item' => 'New ' . $labelSingular,
-                ]
+                ],
             ]
         );
-    });
-}
+    }
+);
