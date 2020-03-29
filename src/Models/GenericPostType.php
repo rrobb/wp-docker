@@ -6,7 +6,7 @@ namespace WPSite\Models;
 /**
  * Class GenericPostType
  * Creates a post type based on the generic rules
- * @package Endouble\Models
+ * @package WPSite\Models
  */
 abstract class GenericPostType implements PostTypeInterface
 {

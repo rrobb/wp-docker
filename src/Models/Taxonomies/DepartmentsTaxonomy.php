@@ -7,7 +7,7 @@ use WPSite\Models\GenericTaxonomy;
 
 /**
  * Class ExperiencesTaxonomy
- * @package Endouble\Models\Taxonomies
+ * @package WPSite\Models\Taxonomies
  */
 class DepartmentsTaxonomy extends GenericTaxonomy
 {

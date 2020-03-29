@@ -7,7 +7,7 @@ use WPSite\Models\GenericPostType;
 
 /**
  * Class Vacancy
- * @package Endouble\Models\PostTypes
+ * @package WPSite\Models\PostTypes
  */
 class Vacancy extends GenericPostType
 {

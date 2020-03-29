@@ -6,6 +6,7 @@ namespace WPSite\Http;
 use Psr\Container\ContainerInterface;
 use Timber\FunctionWrapper;
 use Timber\Timber;
+use function function_exists;
 
 /**
  * This is the abstract controller class. It contains methods for:
@@ -50,13 +51,14 @@ abstract class Controller implements ControllerInterface
      */
     public function renderPage($template, array $data = []): void
     {
+        $themeName = 'wp-site';
         $baseData = [
-            'gtmTag' => \function_exists('gtm4wp_get_the_gtm_tag') ? gtm4wp_get_the_gtm_tag() : '',
+            'gtmTag' => function_exists('gtm4wp_get_the_gtm_tag') ? gtm4wp_get_the_gtm_tag() : '',
             'nonce' => wp_create_nonce('wp_rest'),
             'cssLoaded' => !empty($_COOKIE['fullCssLoaded']) ? filter_var($_COOKIE['fullCssLoaded'], FILTER_SANITIZE_STRING) : false,
             'fontsLoaded' => !empty($_COOKIE['fontsLoaded']) ? true : false,
             'currentLanguage' => $this->getCurrentLanguageSlug(),
-            'imgDir' => '/content/themes/endouble/assets/img/',
+            'imgDir' => sprintf('/content/themes/%s/assets/img/', $themeName),
             'pages' => $this->getPages(),
         ];
 

@@ -4,20 +4,23 @@ declare(strict_types=1);
 namespace WPSite;
 
 use Closure;
-use WPSite\Container\Exceptions\DependencyClassDoesNotExistException;
-use WPSite\Container\Exceptions\DependencyHasNoDefaultValueException;
-use WPSite\Container\Exceptions\DependencyIsNotInstantiableException;
-use WPSite\Container\Exceptions\DependencyNotRegisteredException;
 use Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionParameter;
+use WPSite\Container\Exceptions\DependencyClassDoesNotExist as DependencyClassDoesNotExistException;
+use WPSite\Container\Exceptions\DependencyHasNoDefaultValue as DependencyHasNoDefaultValueException;
+use WPSite\Container\Exceptions\DependencyIsNotInstantiable as DependencyIsNotInstantiableException;
+use WPSite\Container\Exceptions\DependencyNotRegistered as DependencyNotRegisteredException;
+use function is_object;
 
 /**
  * A psr-11 compliant container
  */
 class ServiceContainer implements ContainerInterface
 {
+    protected $groups = [];
+
     /**
      * Registered dependencies
      * @var array
@@ -106,7 +109,7 @@ class ServiceContainer implements ContainerInterface
      */
     private function asConcrete($entry)
     {
-        if (\is_object($entry)) {
+        if (is_object($entry)) {
             return $entry;
         }
         $resolved = [];
@@ -198,5 +201,15 @@ class ServiceContainer implements ContainerInterface
         }
 
         return $parameter->getClass()->isInternal() === false;
+    }
+
+    public function setGroup(string $groupName, array $entries)
+    {
+        $this->groups[$groupName] = $entries;
+    }
+
+    public function getGroup(string $groupName)
+    {
+        return $this->groups[$groupName];
     }
 }

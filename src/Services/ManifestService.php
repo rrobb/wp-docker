@@ -7,7 +7,7 @@ namespace WPSite\Services;
  * This singleton class contains methods for retrieving hashed file names from a manifest file
  *
  * Class ManifestService
- * @package Endouble\Services
+ * @package WPSite\Services
  */
 class ManifestService
 {
@@ -18,7 +18,7 @@ class ManifestService
      * on build by the Gulp 'css-rev' and 'js-rev' tasks.
      * @const string
      */
-    public const ASSET_BASE_DIR = '/content/themes/endouble/assets';
+    public const ASSET_BASE_DIR = '/content/themes/wp-site/assets';
 
     /**
      * File hash match pattern

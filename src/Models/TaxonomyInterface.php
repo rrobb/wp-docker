@@ -5,8 +5,8 @@ namespace WPSite\Models;
 
 /**
  * Interface TaxonomyInterface
- * @author Rob Burgers <rob@endouble.com>
- * @package Endouble\Models
+ * @author Rob Burgers <robburgers@gmail.com>
+ * @package WPSite\Models
  * @date 22/03/2020
  */
 interface TaxonomyInterface

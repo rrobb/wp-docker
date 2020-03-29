@@ -3,12 +3,14 @@ declare(strict_types=1);
 
 namespace WPSite\Models;
 
+use function is_array;
+
 /**
  * Class GenericTaxonomy
  *
  * Creates a taxonomy based on generic rules
  *
- * @package Endouble\Models
+ * @package WPSite\Models
  */
 abstract class GenericTaxonomy implements TaxonomyInterface
 {
@@ -71,6 +73,6 @@ abstract class GenericTaxonomy implements TaxonomyInterface
             ]
         );
 
-        return \is_array($terms) ? $terms : [];
+        return is_array($terms) ? $terms : [];
     }
 }

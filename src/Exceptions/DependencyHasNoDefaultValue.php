@@ -7,14 +7,14 @@ use Exception;
 use Psr\Container\ContainerExceptionInterface;
 
 /**
- * Class DependencyIsNotInstantiableException
- * @author Rob Burgers <rob@endouble.com>
+ * Class DependencyHasNoDefaultValueException
+ * @author Rob Burgers <robburgers@gmail.com>
  * @package WPSite\Container\Exceptions
  */
-class DependencyIsNotInstantiableException extends Exception implements ContainerExceptionInterface
+class DependencyHasNoDefaultValue extends Exception implements ContainerExceptionInterface
 {
     /**
-     * DependencyIsNotInstantiableException constructor.
+     * DependencyHasNoDefaultValueException constructor.
      * @param $dependency
      * @param int $code
      * @param Exception|null $previous
@@ -24,7 +24,7 @@ class DependencyIsNotInstantiableException extends Exception implements Containe
         $code = 0,
         Exception $previous = null
     ) {
-        $message = "Dependency {$dependency} is not instantiable";
+        $message = "Dependency {$dependency} can't be instantiated and yet has no default value";
         parent::__construct(
             $message,
             $code,

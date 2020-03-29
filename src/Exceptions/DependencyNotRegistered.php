@@ -8,10 +8,10 @@ use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * Class DependencyNotRegisteredException
- * @author Rob Burgers <rob@endouble.com>
+ * @author Rob Burgers <robburgers@gmail.com>
  * @package WPSite\Container\Exceptions
  */
-class DependencyNotRegisteredException extends Exception implements NotFoundExceptionInterface
+class DependencyNotRegistered extends Exception implements NotFoundExceptionInterface
 {
     /**
      * DependencyNotRegisteredException constructor.

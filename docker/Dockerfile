@@ -31,6 +31,7 @@ RUN a2enmod ssl
 RUN a2enmod mpm_prefork
 
 COPY ./docker/php/php.ini /usr/local/etc/php/
+COPY ./docker/php/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN curl -sS https://getcomposer.org/installer | php \
         && mv composer.phar /usr/local/bin/ \

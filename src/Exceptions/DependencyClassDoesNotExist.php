@@ -8,10 +8,10 @@ use Psr\Container\ContainerExceptionInterface;
 
 /**
  * Class DependencyClassDoesNotExistException
- * @author Rob Burgers <rob@endouble.com>
+ * @author Rob Burgers <robburgers@gmail.com>
  * @package WPSite\Container\Exceptions
  */
-class DependencyClassDoesNotExistException extends Exception implements ContainerExceptionInterface
+class DependencyClassDoesNotExist extends Exception implements ContainerExceptionInterface
 {
     /**
      * DependencyClassDoesNotExistException constructor.

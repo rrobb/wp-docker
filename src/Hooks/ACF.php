@@ -6,7 +6,7 @@ namespace WPSite\Hooks;
 /**
  * Class ACF
  *
- * @author Rob Burgers <rob@endouble.com>
+ * @author Rob Burgers <robburgers@gmail.com>
  * @package WPSite\Hooks
  */
 class ACF implements HooksInterface

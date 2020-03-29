@@ -3,22 +3,24 @@ declare(strict_types=1);
 
 namespace WPSite\Http\Factories;
 
-use WPSite\Http\ControllerInterface;
-use WPSite\App;
 use Exception;
+use UnexpectedValueException;
 use WP_Post;
+use WP_Query;
+use WPSite\App;
+use WPSite\Http\ControllerInterface;
 
 /**
  * This is the factory class for the 'Controller' classes.
  */
-class ControllerFactory
+class Controller
 {
     /**
      * Shared namespace for all controllers.
      *
      * @const string
      */
-    private const CONTROLLER_NAMESPACE = 'Endouble\Http\Controllers';
+    private const CONTROLLER_NAMESPACE = 'WPSite\Http\Controllers';
 
     /**
      * Name of the request type for front page requests.
@@ -73,7 +75,7 @@ class ControllerFactory
             $controller = self::create($controllerName);
         } catch (Exception $e) {
             // Catches requests for which no controller was defined
-            $controller = self::create(self::createPageNotFound());
+            $controller = self::create(self::createPageNotFound($e));
         }
 
         $controller->render();
@@ -86,12 +88,12 @@ class ControllerFactory
      *
      * @param string $controllerClass
      * @return ControllerInterface
-     * @throws \UnexpectedValueException
+     * @throws UnexpectedValueException
      */
     private static function create($controllerClass): ControllerInterface
     {
         if (!class_exists($controllerClass)) {
-            throw new \UnexpectedValueException("Controller '$controllerClass' is not defined.");
+            throw new UnexpectedValueException("Controller '$controllerClass' is not defined.");
         }
         $container = App::getInstance()->getContainer();
 
@@ -223,7 +225,7 @@ class ControllerFactory
 
         global $wp_query;
 
-        if ($wp_query instanceof \WP_Query && isset($wp_query->query['post_type'])  ) {
+        if ($wp_query instanceof WP_Query && isset($wp_query->query['post_type'])) {
             $postType = $wp_query->query['post_type'];
         }
 

@@ -14,25 +14,41 @@
           "fancyguy/webroot-installer": "^1.0"
         }
       }
+    },
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
     }
   ],
   "extra": {
     "installer-paths": {
       "app/content/plugins/{$name}/": [
         "type:wordpress-plugin",
-        "endouble/content-alert"
+        "wp-graphql/wp-graphql"
       ]
     },
     "webroot-dir": "app/wp",
     "webroot-package": "wordpress/wordpress"
   },
   "require": {
-    "psr/container": "1.0.*",
-    "wordpress/wordpress": "^5.3.2",
+    "ext-json": "*",
+    "psr/container": "^1.0",
     "timber/timber": "^1.10",
-    "twig/twig": "^2.11"
+    "twig/twig": "^2.11",
+    "vlucas/phpdotenv": "^2.4",
+    "wordpress/wordpress": "^5.3",
+    "wp-graphql/wp-graphiql": "^1.0",
+    "wp-graphql/wp-graphql": "^0.8",
+    "wp-graphql/wp-graphql-acf": "^0.3",
+    "wpackagist-plugin/advanced-custom-fields": "^5.8"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPSite\\": "src",
+      "MUPlugins\\": "app/content/mu-plugins"
+    }
   }
 }

@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace WPSite;
 
-use WPSite\ServiceContainer as Container;
 use Psr\Container\ContainerInterface;
+use WPSite\ServiceContainer as Container;
 
 /**
  * Class Kernel
@@ -21,7 +21,7 @@ class App
     {
         if (self::$instance === null) {
 
-            if($container === null){
+            if ($container === null) {
                 $container = new Container();
             }
             self::$instance = new self($container);

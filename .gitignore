@@ -1,6 +1,9 @@
 app/wp
 docker/cert/*
 docker/mysql/data/*
+docker/php/composer/*
+vendor/*
 !.gitignore
 !.gitkeep
+!docker/php/composer/auth.json.dist
 app-init.php

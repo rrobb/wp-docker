@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace WPSite\Http\Controllers;
 
-use WPSite\Http\Controller;
 use Timber\Timber;
+use WPSite\Http\Controller;
 
 
 /**
  * Class FrontPage
- * @package Endouble\Controller
+ * @package WPSite\Controller
  */
 class FrontPage extends Controller
 {

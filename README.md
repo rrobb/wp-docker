@@ -19,7 +19,7 @@ at `https://localhost/wp/wp-admin/`.
 Certificate and key can be found in `docker/cert` and are expected to be named `ssl.crt` and `sll.key` respectively.
 Use the command below to re-generate certificate and key:`
 openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj \
-    "/C=NL/ST=Noord Holland/L=Amsterdam/O=Endouble/CN=test.local" \
+    "/C=NL/ST=Noord Holland/L=Amsterdam/O=Company/CN=test.local" \
     -keyout ./ssl.key -out ./ssl.crt
 `
 To make use of the new keys, remember to run `docker-compose build` again.

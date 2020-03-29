@@ -5,7 +5,7 @@ namespace WPSite\Models;
 
 /**
  * Interface PostType
- * @package Endouble\Models
+ * @package WPSite\Models
  */
 interface PostTypeInterface
 {
