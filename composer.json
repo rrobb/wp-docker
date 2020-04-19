@@ -5,7 +5,7 @@
       "package": {
         "name": "wordpress/wordpress",
         "type": "webroot",
-        "version": "5.3.2",
+        "version": "5.4.0",
         "dist": {
           "type": "zip",
           "url": "https://wordpress.org/latest.zip"
@@ -18,13 +18,28 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wp-graphql/wp-graphql-meta-query"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wp-graphql/wp-graphql-tax-query"
     }
   ],
   "extra": {
     "installer-paths": {
+      "app/content/mu-plugins/{$name}/": [
+        "wp-graphql/wp-graphiql",
+        "wp-graphql/wp-graphql",
+        "wp-graphql/wp-graphql-acf",
+        "wp-graphql/wp-graphql-meta-query",
+        "wp-graphql/wp-graphql-tax-query",
+        "wpackagist-plugin/advanced-custom-fields"
+      ],
       "app/content/plugins/{$name}/": [
-        "type:wordpress-plugin",
-        "wp-graphql/wp-graphql"
+        "type:wordpress-plugin"
       ]
     },
     "webroot-dir": "app/wp",
@@ -36,19 +51,24 @@
     "timber/timber": "^1.10",
     "twig/twig": "^2.11",
     "vlucas/phpdotenv": "^2.4",
-    "wordpress/wordpress": "^5.3",
+    "wordpress/wordpress": "^5.4",
     "wp-graphql/wp-graphiql": "^1.0",
     "wp-graphql/wp-graphql": "^0.8",
     "wp-graphql/wp-graphql-acf": "^0.3",
-    "wpackagist-plugin/advanced-custom-fields": "^5.8"
+    "wpackagist-plugin/advanced-custom-fields": "^5.8",
+    "wp-graphql/wp-graphql-tax-query": "^0.1.0",
+    "wp-graphql/wp-graphql-meta-query": "^0.1.1"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master"
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^8.5"
   },
   "autoload": {
     "psr-4": {
       "WPSite\\": "src",
-      "MUPlugins\\": "app/content/mu-plugins"
+      "RegisterCustomTypes\\": "app/content/mu-plugins/register-custom-types/src",
+      "Tests\\": "tests",
+      "Project\\": "project/src"
     }
   }
 }

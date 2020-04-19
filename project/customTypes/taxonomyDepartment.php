@@ -29,6 +29,9 @@ add_action(
                     'all_items' => $labelPlural,
                     'add_new_item' => 'New ' . $labelSingular,
                 ],
+                'show_in_graphql' => true,
+                'graphql_single_name' => $labelSingular,
+                'graphql_plural_name' => $labelPlural,
             ]
         );
     }

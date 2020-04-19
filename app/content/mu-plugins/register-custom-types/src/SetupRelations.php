@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MUPlugins\RegisterCustomTypes;
+namespace RegisterCustomTypes;
 
 use WP_Post_Type;
 use WP_Taxonomy;

@@ -50,6 +50,9 @@ add_action(
                     'not_found_in_trash' => 'No ' . $label_plural . ' Found in Trash',
                     'parent' => 'Parent ' . $label_singular,
                 ],
+                'show_in_graphql' => true,
+                'graphql_single_name' => $label_singular,
+                'graphql_plural_name' => $label_plural,
             ]
         );
     }

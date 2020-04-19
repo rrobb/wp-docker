@@ -4,7 +4,7 @@ use Dotenv\Dotenv;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-(new Dotenv(dirname(__DIR__)))->load();
+(new Dotenv(dirname(__DIR__) . '/project'))->load();
 
 define('WP_ENV', getenv('WP_ENV'));
 define('WP_DEBUG', getenv('WP_DEBUG'));
