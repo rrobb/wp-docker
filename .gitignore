@@ -1,9 +1,13 @@
 app/wp
+!app/content/mu-plugins/register-custom-types
+app/content/mu-plugins/*
+app/content/uploads/*
+app-init.php
 docker/cert/*
 docker/mysql/data/*
 docker/php/composer/*
+!docker/php/composer/auth.json.dist
 vendor/*
+.*
 !.gitignore
 !.gitkeep
-!docker/php/composer/auth.json.dist
-app-init.php

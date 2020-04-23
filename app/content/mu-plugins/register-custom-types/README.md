@@ -3,7 +3,7 @@
 ## Usage
 This plugin handles registration of custom PostTypes and Taxonomies. All custom PostTypes and Taxonomies available in 
 the `project/postTypes` and `project/taxonomies` will be registered automatically.
-The plugin provides a WP-admin page *Manage Taxonomy-PostType relations* under `Settings -> Manage relations` in 
+The plugin provides a WP-Admin page *Manage Taxonomy-PostType relations* under `Settings -> Manage relations` in 
 the admin menu bar. 
 
 ## Installation
