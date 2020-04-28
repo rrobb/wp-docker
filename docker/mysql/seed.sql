@@ -216,7 +216,7 @@ LOCK TABLES `nw_options` WRITE;
     DISABLE KEYS */;
 
 INSERT INTO `nw_options` (`option_id`, `option_name`, `option_value`, `autoload`)
-VALUES (1, 'siteurl', 'https://localhost', 'yes'),
+VALUES (1, 'siteurl', 'https://localhost/wp', 'yes'),
        (2, 'home', 'https://localhost', 'yes'),
        (3, 'blogname', 'Local Project', 'yes'),
        (4, 'blogdescription', 'Just another WordPress site', 'yes'),
@@ -851,7 +851,7 @@ LOCK TABLES `nw_users` WRITE;
 
 INSERT INTO `nw_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`,
                         `user_activation_key`, `user_status`, `display_name`, `spam`, `deleted`)
-VALUES (1, 'wp-site', '$1$qq7btlac$Xs1p4NXkFoBJFgkKxQW/61', 'wp-site', 'support@wp-site.com', '', '2016-05-23 08:24:55',
+VALUES (1, 'wp-site', '$1$0nG5qZ7V$shUm6.q7xvFXIOq6pSYJk.', 'wp-site', 'support@wp-site.com', '', '2016-05-23 08:24:55',
         '', 0, 'wp-site', 0, 0);
 
 /*!40000 ALTER TABLE `nw_users`
