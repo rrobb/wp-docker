@@ -20,8 +20,6 @@ RUN pecl install xdebug-2.9.3 && docker-php-ext-enable xdebug
 
 COPY ./docker/cert/ssl.crt /etc/apache2/ssl/ssl.crt
 COPY ./docker/cert/ssl.key /etc/apache2/ssl/ssl.key
-COPY ./docker/php/composer/id_rsa /root/.ssh/id_rsa
-COPY ./docker/php/composer/id_rsa.pub /root/.ssh/id_rsa.pub
 COPY ./docker/php/composer/auth.json /root/.composer/auth.json
 COPY ./docker/mysql/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
@@ -33,13 +31,10 @@ RUN a2enmod mpm_prefork
 COPY ./docker/php/php.ini /usr/local/etc/php/
 COPY ./docker/php/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-RUN curl -sS https://getcomposer.org/installer | php \
-        && mv composer.phar /usr/local/bin/ \
-        && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html/test/
 
-RUN composer install
 ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"
 
 EXPOSE 80
